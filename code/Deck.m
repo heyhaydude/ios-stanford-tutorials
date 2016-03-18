@@ -11,13 +11,13 @@
 
 @interface Deck()
 
-@property (strong,atomic) NSMutableArray *cards;
+@property (strong,nonatomic) NSMutableArray *cards;
 
 @end
 
 @implementation Deck
 
-- (NSMutableArray *)cards{
+- (NSMutableArray *)cards {
     if (!_cards) {
         _cards = [[NSMutableArray alloc] init];
     }
@@ -32,8 +32,8 @@
     }
 }
 
-- (void) addCard:(Card *)card atTop:(BOOL)atTop{
-    [self addCard:card atTop:NO]
+- (void) addCard:(Card *)card {
+    [self addCard:card atTop:NO];
 }
 
 - (Card *) drawRandomCard{

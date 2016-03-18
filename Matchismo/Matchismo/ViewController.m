@@ -2,7 +2,7 @@
 //  ViewController.m
 //  Matchismo
 //
-//  Created by mobile on 3/16/16.
+//  Created by mobile on 3/17/16.
 //  Copyright (c) 2016 McMaster-Carr. All rights reserved.
 //
 
@@ -14,14 +14,10 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)touchCardButton:(UIButton *)sender {
+    [sender setBackgroundImage:@"cardback" forState:UIControlStateNormal];
+    
 }
 
 @end
