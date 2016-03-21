@@ -7,11 +7,15 @@
 //
 
 #import "CardMatchingGame.h"
+#import "PlayingCard.h"
 
 @interface CardMatchingGame()
 
 @property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic,strong) NSMutableArray *cards;
+@property (nonatomic,strong) PlayingCard *firstCard;
+@property (nonatomic,strong) PlayingCard *secondCard;
+
 
 @end
 
@@ -22,6 +26,10 @@
         _cards = [[NSMutableArray alloc] init];
     }
     return _cards;
+}
+
+- (NSString *)selectedCardDisplay{
+    return [self.firstCard.contents stringByAppendingString:self.secondCard.contents];
 }
 
 - (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck{
@@ -64,6 +72,8 @@ static const int COST_TO_CHOOSE = 1;
                         self.score  += matchScore * MATCH_BONUS;
                         otherCard.matched = YES;
                         card.matched = YES;
+                        self.firstCard = (PlayingCard *) otherCard;
+                        self.secondCard = (PlayingCard *)card;
                     } else {
                         self.score -= MISMATCH_PENALTY;
                         otherCard.chosen = NO;
@@ -73,6 +83,7 @@ static const int COST_TO_CHOOSE = 1;
             }
             self.score -= COST_TO_CHOOSE;
             card.chosen = YES;
+            self.firstCard = card;
         }
     }
 }
