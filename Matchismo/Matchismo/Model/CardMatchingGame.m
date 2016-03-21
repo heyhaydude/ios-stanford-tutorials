@@ -29,7 +29,12 @@
 }
 
 - (NSString *)selectedCardDisplay{
-    return [self.firstCard.contents stringByAppendingString:self.secondCard.contents];
+    
+    NSString *first = (self.firstCard) ? self.firstCard.contents: @"";
+    
+    NSString *second = (self.secondCard) ? self.secondCard.contents: @"";
+    
+    return [first stringByAppendingString:second];
 }
 
 - (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck{
@@ -61,10 +66,15 @@ static const int COST_TO_CHOOSE = 1;
 - (void)chooseCardAtIndex:(NSUInteger)index{
     Card *card = [self cardAtIndex:index];
     
+    self.firstCard = nil;
+    self.secondCard = nil;
+    
     if (!card.isMatched) {
         if (card.isChosen) {
             card.chosen = NO;
         }else{
+            self.secondCard = (PlayingCard *)card;
+            
             for (Card *otherCard in self.cards) {
                 if (otherCard.isChosen && !otherCard.isMatched) {
                     int matchScore = [card match:@[otherCard]];
@@ -73,7 +83,6 @@ static const int COST_TO_CHOOSE = 1;
                         otherCard.matched = YES;
                         card.matched = YES;
                         self.firstCard = (PlayingCard *) otherCard;
-                        self.secondCard = (PlayingCard *)card;
                     } else {
                         self.score -= MISMATCH_PENALTY;
                         otherCard.chosen = NO;
@@ -83,7 +92,6 @@ static const int COST_TO_CHOOSE = 1;
             }
             self.score -= COST_TO_CHOOSE;
             card.chosen = YES;
-            self.firstCard = card;
         }
     }
 }

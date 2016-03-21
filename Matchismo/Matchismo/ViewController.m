@@ -67,7 +67,7 @@
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
-        //self.statusLabel.text = self.game.selectedCardDisplay;
+        self.statusLabel.text = self.game.selectedCardDisplay;
     }
 }
 
