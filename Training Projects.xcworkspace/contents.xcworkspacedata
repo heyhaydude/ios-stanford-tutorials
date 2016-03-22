@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Set/Set.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Matchismo/Matchismo.xcodeproj">
    </FileRef>
    <FileRef

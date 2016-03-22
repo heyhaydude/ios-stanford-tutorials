@@ -1,14 +1,13 @@
 //
-//  ViewController.h
+//  PlayingCardDeck.h
 //  Matchismo
 //
 //  Created by mobile on 3/17/16.
 //  Copyright (c) 2016 McMaster-Carr. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Deck.h"
 
-@interface ViewController : UIViewController
+@interface SetDeck : Deck
 
 @end
-

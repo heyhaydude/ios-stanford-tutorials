@@ -25,7 +25,7 @@
 
 - (CardMatchingGame *)game{
     if (!_game) {
-        _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+        _game = [[CardMatchingGame alloc] initWithCardCount:[self.deck] usingDeck:[self createDeck]];
     }
     return _game;
 }
@@ -75,6 +75,8 @@
     return card.isChosen ? card.contents : @"";
 }
 
+- (IBAction)touchCardButton:(UIButton *)sender {
+}
 - (UIImage *)backgroundImageForCard:(Card *)card{
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
 }
