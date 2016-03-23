@@ -300,7 +300,7 @@
         <!--Item 1-->
         <scene sceneID="TZT-Hi-qrt">
             <objects>
-                <viewController id="f95-a9-3Cd" sceneMemberID="viewController">
+                <viewController id="f95-a9-3Cd" customClass="MatchismoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FUc-gm-FUi"/>
                         <viewControllerLayoutGuide type="bottom" id="RVR-ic-cxW"/>

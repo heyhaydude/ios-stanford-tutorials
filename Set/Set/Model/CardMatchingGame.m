@@ -77,7 +77,7 @@ static const int COST_TO_CHOOSE = 1;
             
             for (Card *otherCard in self.cards) {
                 if (otherCard.isChosen && !otherCard.isMatched) {
-                    int matchScore = [card match:@[otherCard]];
+                    int matchScore = [CardMatchingGame match:@[card,otherCard]];
                     if (matchScore) {
                         self.score  += matchScore * MATCH_BONUS;
                         otherCard.matched = YES;
@@ -94,6 +94,21 @@ static const int COST_TO_CHOOSE = 1;
             card.chosen = YES;
         }
     }
+}
+
++ (int)match:(NSArray *)cards{
+    int score = 0;
+    
+    if ([cards count]==2) {
+        Card *card1 = cards[0];
+        Card *card2 = cards[1];
+        
+        if ([card1.contents isEqualToString:card2.contents]) {
+            score = 1;
+        }
+    }
+    
+    return score;
 }
 
 @end
