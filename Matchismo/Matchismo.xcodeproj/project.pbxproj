@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		75B397F71C9BA9060013FD87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B397F61C9BA9060013FD87 /* main.m */; };
 		75B397FA1C9BA9060013FD87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B397F91C9BA9060013FD87 /* AppDelegate.m */; };
-		75B397FD1C9BA9060013FD87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B397FC1C9BA9060013FD87 /* ViewController.m */; };
+		75B397FD1C9BA9060013FD87 /* MatchismoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B397FC1C9BA9060013FD87 /* MatchismoViewController.m */; };
 		75B398001C9BA9060013FD87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75B397FE1C9BA9060013FD87 /* Main.storyboard */; };
 		75B398021C9BA9060013FD87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75B398011C9BA9060013FD87 /* Images.xcassets */; };
 		75B398051C9BA9060013FD87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B398031C9BA9060013FD87 /* LaunchScreen.xib */; };
@@ -37,8 +37,8 @@
 		75B397F61C9BA9060013FD87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		75B397F81C9BA9060013FD87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		75B397F91C9BA9060013FD87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		75B397FB1C9BA9060013FD87 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		75B397FC1C9BA9060013FD87 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		75B397FB1C9BA9060013FD87 /* MatchismoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchismoViewController.h; sourceTree = "<group>"; };
+		75B397FC1C9BA9060013FD87 /* MatchismoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchismoViewController.m; sourceTree = "<group>"; };
 		75B397FF1C9BA9060013FD87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75B398011C9BA9060013FD87 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		75B398041C9BA9060013FD87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -97,8 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				75B3981A1C9BB0800013FD87 /* Model */,
-				75B397FB1C9BA9060013FD87 /* ViewController.h */,
-				75B397FC1C9BA9060013FD87 /* ViewController.m */,
+				75B397FB1C9BA9060013FD87 /* MatchismoViewController.h */,
+				75B397FC1C9BA9060013FD87 /* MatchismoViewController.m */,
 				75B397FE1C9BA9060013FD87 /* Main.storyboard */,
 				75B397F41C9BA9060013FD87 /* Supporting Files */,
 			);
@@ -254,7 +254,7 @@
 			files = (
 				75B398251C9BB1030013FD87 /* PlayingCard.m in Sources */,
 				75B398241C9BB1030013FD87 /* Deck.m in Sources */,
-				75B397FD1C9BA9060013FD87 /* ViewController.m in Sources */,
+				75B397FD1C9BA9060013FD87 /* MatchismoViewController.m in Sources */,
 				75B397FA1C9BA9060013FD87 /* AppDelegate.m in Sources */,
 				75B398291C9C58540013FD87 /* CardMatchingGame.m in Sources */,
 				75B398261C9BB1030013FD87 /* PlayingCardDeck.m in Sources */,
