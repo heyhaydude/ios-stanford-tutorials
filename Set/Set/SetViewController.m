@@ -110,8 +110,9 @@
     
     
     as = [as initWithString:title
-                 attributes:@{NSForegroundColorAttributeName:[dict objectForKey:card.color],
-                              NSBackgroundColorAttributeName:[dict objectForKey:card.shading]}];
+                 attributes:@{NSForegroundColorAttributeName:[dict objectForKey:card.shading],
+                              NSStrokeColorAttributeName:[dict objectForKey:card.color],
+                              NSStrokeWidthAttributeName:@-3.0}];
     
     return as;
 }
