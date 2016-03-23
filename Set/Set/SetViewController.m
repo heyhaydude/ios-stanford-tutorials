@@ -6,12 +6,12 @@
 //  Copyright (c) 2016 McMaster-Carr. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SetViewController.h"
 #import "SetGame.h"
 #import "SetDeck.h"
 #import "SetCard.h"
 
-@interface ViewController ()
+@interface SetViewController ()
 
 @property (strong, nonatomic) SetGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation ViewController
+@implementation SetViewController
 
 - (SetGame *)game{
     if (!_game) {
@@ -37,15 +37,9 @@
 
 - (IBAction)resetButton:(UIButton *)sender {
     self.game = nil;
-
-    for (UIButton *cardButton in self.cardButtons) {
-        NSInteger cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
-        Card *card = [self.game cardAtIndex:cardButtonIndex];
-       // [cardButton setTitle:[self titleForCard:card] forState:UIControlStateNormal];
-        [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
-        cardButton.enabled = !card.isMatched;
-        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",(long)self.game.score];
-    }
+    [self updateUI];
+    
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",(long)self.game.score];
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
@@ -64,8 +58,21 @@
         NSInteger cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardButtonIndex];
         [cardButton setAttributedTitle:[self titleForCard:(SetCard *)card] forState:UIControlStateNormal];
-        //[cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
-        cardButton.enabled = !card.isMatched;
+    
+        if (card.isChosen) {
+            [[cardButton layer] setBorderWidth:2.0f];
+            [[cardButton layer] setBorderColor:[UIColor blueColor].CGColor];
+        } else {
+            [[cardButton layer] setBorderWidth:1.0f];
+            [[cardButton layer] setBorderColor:[UIColor whiteColor].CGColor];
+        }
+        
+        if (card.isMatched) {
+            cardButton.enabled = NO;
+        } else {
+            cardButton.enabled = YES;
+        }
+
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
     }
 }
@@ -108,12 +115,6 @@
     
     return as;
 }
-
-- (UIImage *)backgroundImageForCard:(Card *)card{
-    return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
-}
-
-
 
 
 @end

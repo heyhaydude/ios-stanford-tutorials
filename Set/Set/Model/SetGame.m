@@ -51,15 +51,17 @@
 
 - (void)chooseCardAtIndex:(NSUInteger)index{
     Card *card = [self cardAtIndex:index];
+    card.chosen = YES;
     
     self.chosenCards = nil;
+    self.chosenCards = [[NSMutableArray alloc] init];
     for (Card *otherCard in self.cards) {
         if (otherCard.isChosen) {
             [self.chosenCards addObject:otherCard];
         }
     }
     
-    int count = [(SetCard *)card match:self.chosenCards];
+    int count = [SetGame match:self.chosenCards];
     
     if (count == 0) {
         // not enough cards were chosen yet so just chose the current card
@@ -75,12 +77,48 @@
         // correct set! give points
         self.score += count;
         // mark them as matched
-        card.matched = YES;
         for (Card * otherCard in self.chosenCards) {
             otherCard.matched = YES;
+            otherCard.chosen = NO;
         }
     }
 }
+
++ (int)match:(NSArray *)cards{
+    int score=0;
+    
+    // there have to be 3 cards selected to attempt a match
+    if ([cards count]==3) {
+        SetCard *otherCard1 = [cards objectAtIndex:0];
+        SetCard *otherCard2 = [cards objectAtIndex:1];
+        SetCard *otherCard3 = [cards objectAtIndex:2];
+        
+        //check each feature and check if they are all the same or all different
+        //feature unique counts should be either one or three. never 2.
+        NSSet *colorSet = [NSSet setWithObjects:otherCard1.color, otherCard2.color, otherCard3.color, nil];
+        NSSet *shapeSet = [NSSet setWithObjects:otherCard1.shape, otherCard2.shape, otherCard3.shape, nil];
+        NSSet *numberSet = [NSSet setWithObjects:otherCard1.number, otherCard2.number, otherCard3.number, nil];
+        NSSet *shadingSet = [NSSet setWithObjects:otherCard1.shading, otherCard2.shading, otherCard3.shading, nil];
+        
+        NSArray *features = @[colorSet,shapeSet,numberSet,shadingSet];
+        
+        BOOL match = YES;
+        for (NSSet *set in features) {
+            if ([set count] == 2) {
+                match = NO;
+                break;
+            }
+        }
+        
+        if (match) {
+            score = 10;
+        }else{
+            score = -20;
+        }
+    }
+    return score;
+}
+
 
 
 @end

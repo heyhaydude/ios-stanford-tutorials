@@ -20,6 +20,6 @@
 + (NSArray *)validNumbers;
 + (NSArray *)validShading;
 
-- (int)match:(NSArray *)otherCards;
++ (int)match:(NSArray *)cards;
 
 @end
