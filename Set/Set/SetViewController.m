@@ -84,7 +84,7 @@
     // create a translation for object settings to display settings
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     [dict setObject:[UIColor blueColor] forKey:[[SetCard validColors] objectAtIndex:0]];
-    [dict setObject:[UIColor greenColor] forKey:[[SetCard validColors] objectAtIndex:1]];
+    [dict setObject:[self darkerColorForColor:[UIColor greenColor]] forKey:[[SetCard validColors] objectAtIndex:1]];
     [dict setObject:[UIColor redColor] forKey:[[SetCard validColors] objectAtIndex:2]];
     [dict setObject:@"▲" forKey:[[SetCard validShapes] objectAtIndex:0]];
     [dict setObject:@"●" forKey:[[SetCard validShapes] objectAtIndex:1]];
@@ -95,7 +95,7 @@
     UIColor *color = [dict objectForKey:card.color];
     [dict setObject:color forKey:[[SetCard validShading] objectAtIndex:0]];
     [dict setObject:[UIColor whiteColor] forKey:[[SetCard validShading] objectAtIndex:1]];
-    [dict setObject:[color colorWithAlphaComponent:0.3] forKey:[[SetCard validShading] objectAtIndex:2]];
+    [dict setObject:[color colorWithAlphaComponent:0.2] forKey:[[SetCard validShading] objectAtIndex:2]];
     
     
     // now translate
@@ -108,13 +108,29 @@
     }
     title = (NSMutableString *)[title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
+    UIFont *font = [UIFont systemFontOfSize:16];
+    if ([card.shape isEqualToString:[[SetCard validShapes] objectAtIndex:1]]) {
+        font = [UIFont systemFontOfSize:26];
+    }
     
     as = [as initWithString:title
                  attributes:@{NSForegroundColorAttributeName:[dict objectForKey:card.shading],
                               NSStrokeColorAttributeName:[dict objectForKey:card.color],
-                              NSStrokeWidthAttributeName:@-3.0}];
+                              NSStrokeWidthAttributeName:@-5.0,
+                              NSFontAttributeName:font}];
     
     return as;
+}
+
+- (UIColor *)darkerColorForColor:(UIColor *)c
+{
+    CGFloat r, g, b, a;
+    if ([c getRed:&r green:&g blue:&b alpha:&a])
+        return [UIColor colorWithRed:MAX(r - 0.2, 0.0)
+                               green:MAX(g - 0.3, 0.0)
+                                blue:MAX(b - 0.2, 0.0)
+                               alpha:a];
+    return nil;
 }
 
 
