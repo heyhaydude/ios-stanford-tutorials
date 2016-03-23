@@ -15,9 +15,10 @@
 
 @property (strong,nonatomic) Deck *deck;
 @property (strong,nonatomic) CardMatchingGame *game;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 @end
 
@@ -41,6 +42,7 @@
     [self updateUI];
 }
 
+
 - (IBAction)touchResetButton:(UIButton *)sender {
     // reset score
     //self.scoreLabel.text = "Score: 0";
@@ -59,6 +61,7 @@
         
     }
 }
+
 
 - (void)updateUI{
     for (UIButton *cardButton in self.cardButtons) {

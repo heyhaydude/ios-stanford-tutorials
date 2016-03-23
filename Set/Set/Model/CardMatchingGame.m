@@ -55,7 +55,7 @@
     return self;
 }
 
-- (Card *)cardAtIndex:(NSUInteger)index{
+- (PlayingCard *)cardAtIndex:(NSUInteger)index{
     return (index<[self.cards count]) ? [self.cards objectAtIndex:index] : nil;
 }
 
@@ -64,34 +64,29 @@ static const int MATCH_BONUS = 4;
 static const int COST_TO_CHOOSE = 1;
 
 - (void)chooseCardAtIndex:(NSUInteger)index{
-    Card *card = [self cardAtIndex:index];
-    
-    self.firstCard = nil;
-    self.secondCard = nil;
+    PlayingCard *card = [self cardAtIndex:index];
     
     if (!card.isMatched) {
-        if (card.isChosen) {
-            card.chosen = NO;
-        }else{
-            self.secondCard = (PlayingCard *)card;
+        card.chosen = YES;
+        self.firstCard = nil;
+        self.secondCard = (PlayingCard *)card;
             
-            for (Card *otherCard in self.cards) {
-                if (otherCard.isChosen && !otherCard.isMatched) {
-                    int matchScore = [CardMatchingGame match:@[card,otherCard]];
-                    if (matchScore) {
-                        self.score  += matchScore * MATCH_BONUS;
-                        otherCard.matched = YES;
-                        card.matched = YES;
-                        self.firstCard = (PlayingCard *) otherCard;
-                    } else {
-                        self.score -= MISMATCH_PENALTY;
-                        otherCard.chosen = NO;
-                    }
-                    break;
+        for (Card *otherCard in self.cards) {
+            if (card != otherCard && otherCard.isChosen && !otherCard.isMatched) {
+                int matchScore = [CardMatchingGame match:@[card,otherCard]];
+                self.firstCard = (PlayingCard *) otherCard;
+                if (matchScore) {
+                    self.score  += matchScore * MATCH_BONUS;
+                    otherCard.matched = YES;
+                    card.matched = YES;
+                } else {
+                    self.score -= MISMATCH_PENALTY;
+                    otherCard.chosen = NO;
+                    card.chosen = NO;
                 }
+                self.score -= COST_TO_CHOOSE;
+                break;
             }
-            self.score -= COST_TO_CHOOSE;
-            card.chosen = YES;
         }
     }
 }
@@ -100,10 +95,12 @@ static const int COST_TO_CHOOSE = 1;
     int score = 0;
     
     if ([cards count]==2) {
-        Card *card1 = cards[0];
-        Card *card2 = cards[1];
+        PlayingCard *card1 = cards[0];
+        PlayingCard *card2 = cards[1];
         
-        if ([card1.contents isEqualToString:card2.contents]) {
+        if (card1.rank == card2.rank) {
+            score = 4;
+        } else if ([card1.suit isEqualToString:card2.suit]){
             score = 1;
         }
     }
