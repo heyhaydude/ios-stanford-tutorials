@@ -15,7 +15,7 @@
 }
 
 + (NSArray *) validShapes {
-    return @[@"squiggle",@"diamond",@"oval"];
+    return @[@"triangle",@"circle",@"square"];
 }
 
 + (NSArray *) validNumbers {
@@ -27,7 +27,7 @@
 }
 
 - (NSString *) contents{
-    return @"todo";
+    return [NSString stringWithFormat:@"%@:%@:%@:%@",self.color,self.shape,self.number,self.shading];
 }
 
 @end

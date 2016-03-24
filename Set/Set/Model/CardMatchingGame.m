@@ -56,7 +56,7 @@
 }
 
 - (PlayingCard *)cardAtIndex:(NSUInteger)index{
-    return (index<[self.cards count]) ? [self.cards objectAtIndex:index] : nil;
+    return (index<[self.cards count]) ? ((PlayingCard *)[self.cards objectAtIndex:index]) : nil;
 }
 
 static const int MISMATCH_PENALTY = 2;

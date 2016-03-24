@@ -16,6 +16,7 @@
 @property (strong, nonatomic) SetGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end
 
@@ -74,6 +75,10 @@
         }
 
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
+    
+        if ([self.game.actionHistory count] > 0) {
+            self.statusLabel.text = [self.game.actionHistory lastObject];
+        }
     }
 }
 

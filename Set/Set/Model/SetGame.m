@@ -15,10 +15,17 @@
 @property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic,strong) NSMutableArray *cards;
 @property (nonatomic,strong) NSMutableArray *chosenCards;
+@property (nonatomic,strong,readwrite) NSMutableArray *actionHistory;
 
 @end
 
 @implementation SetGame
+
+- (void)setActionHistory:(NSMutableArray *)actionHistory{
+    if (!_actionHistory) {
+        _actionHistory = [[NSMutableArray alloc] init];
+    }
+}
 
 - (NSMutableArray *)cards{
     if (!_cards) {
@@ -62,10 +69,12 @@
     }
     
     int count = [SetGame match:self.chosenCards];
-    
+    BOOL attemptedMatch = YES;
+    BOOL successfulMatch = NO;
     if (count == 0) {
         // not enough cards were chosen yet so just chose the current card
         card.chosen = YES;
+        attemptedMatch = NO;
     }else if (count < 0){
         // bad match, so dock points for being wrong
         self.score += count;
@@ -76,12 +85,31 @@
     }else{
         // correct set! give points
         self.score += count;
+        successfulMatch = YES;
         // mark them as matched
         for (Card * otherCard in self.chosenCards) {
             otherCard.matched = YES;
             otherCard.chosen = NO;
         }
     }
+    
+    // set the display text and history info
+    NSMutableString *msg = [NSMutableString stringWithString:@"Selected "];
+    for (int i = 0; i < [self.chosenCards count]; i++) {
+        if (i == 0) {
+            [msg appendFormat:@"%@",[[self.chosenCards objectAtIndex:i] contents]];
+        } else {
+            [msg appendFormat:@" and %@",[[self.chosenCards objectAtIndex:i] contents]];
+        }
+    }
+    if (attemptedMatch) {
+        if (successfulMatch) {
+            [msg appendString:@" for a SUCCESSFUL MATCH!"];
+        } else {
+            [msg appendString:@" for a lame and unsuccessful match."];
+        }
+    }
+    [self.actionHistory addObject:msg];
 }
 
 + (int)match:(NSArray *)cards{
