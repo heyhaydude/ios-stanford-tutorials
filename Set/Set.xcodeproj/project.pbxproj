@@ -23,6 +23,7 @@
 		75B398751CA2FF130013FD87 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B398701CA2FF130013FD87 /* CardMatchingGame.m */; };
 		75B398761CA2FF130013FD87 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B398721CA2FF130013FD87 /* PlayingCard.m */; };
 		75B398771CA2FF130013FD87 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B398741CA2FF130013FD87 /* PlayingCardDeck.m */; };
+		75B3987A1CA3AF270013FD87 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B398791CA3AF270013FD87 /* HistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		75B398721CA2FF130013FD87 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		75B398731CA2FF130013FD87 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		75B398741CA2FF130013FD87 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
+		75B398781CA3AF270013FD87 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = Set/HistoryViewController.h; sourceTree = "<group>"; };
+		75B398791CA3AF270013FD87 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = Set/HistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 		75B3982A1CA04FA40013FD87 = {
 			isa = PBXGroup;
 			children = (
+				75B398781CA3AF270013FD87 /* HistoryViewController.h */,
+				75B398791CA3AF270013FD87 /* HistoryViewController.m */,
 				75B398351CA04FA40013FD87 /* Set */,
 				75B3984F1CA04FA40013FD87 /* SetTests */,
 				75B398341CA04FA40013FD87 /* Products */,
@@ -278,6 +283,7 @@
 				75B3986B1CA054450013FD87 /* SetDeck.m in Sources */,
 				75B398751CA2FF130013FD87 /* CardMatchingGame.m in Sources */,
 				75B3983C1CA04FA40013FD87 /* AppDelegate.m in Sources */,
+				75B3987A1CA3AF270013FD87 /* HistoryViewController.m in Sources */,
 				75B3986A1CA054450013FD87 /* SetCard.m in Sources */,
 				75B3986E1CA2FEFD0013FD87 /* MatchismoViewController.m in Sources */,
 				75B398681CA054450013FD87 /* SetGame.m in Sources */,

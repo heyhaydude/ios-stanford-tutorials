@@ -15,23 +15,25 @@
 @property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic,strong) NSMutableArray *cards;
 @property (nonatomic,strong) NSMutableArray *chosenCards;
-@property (nonatomic,strong,readwrite) NSMutableArray *actionHistory;
+@property (nonatomic,readwrite) NSMutableArray *actionHistory;
 
 @end
 
 @implementation SetGame
 
-- (void)setActionHistory:(NSMutableArray *)actionHistory{
-    if (!_actionHistory) {
-        _actionHistory = [[NSMutableArray alloc] init];
-    }
-}
 
 - (NSMutableArray *)cards{
     if (!_cards) {
         _cards = [[NSMutableArray alloc] init];
     }
     return _cards;
+}
+
+- (NSMutableArray *)actionHistory{
+    if (!_actionHistory) {
+        _actionHistory = [[NSMutableArray alloc] init];
+    }
+    return _actionHistory;
 }
 
 - (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck{
@@ -49,6 +51,7 @@
             
         }
     }
+    //self.actionHistory = [[NSMutableArray alloc] init];
     return self;
 }
 

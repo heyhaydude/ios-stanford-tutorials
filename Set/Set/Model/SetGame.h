@@ -16,7 +16,7 @@
 - (void) chooseCardAtIndex:(NSUInteger)index;
 - (Card *)cardAtIndex:(NSUInteger)index;
 
-@property (nonatomic,strong,readonly) NSMutableArray *actionHistory;
+@property (nonatomic,readonly) NSMutableArray *actionHistory;
 @property (nonatomic,readonly) NSInteger score;
 
 @end

@@ -10,6 +10,7 @@
 #import "SetGame.h"
 #import "SetDeck.h"
 #import "SetCard.h"
+#import "HistoryViewController.h"
 
 @interface SetViewController ()
 
@@ -75,10 +76,10 @@
         }
 
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
+    }
     
-        if ([self.game.actionHistory count] > 0) {
-            self.statusLabel.text = [self.game.actionHistory lastObject];
-        }
+    if ([self.game.actionHistory count] > 0) {
+        self.statusLabel.text = [self.game.actionHistory lastObject];
     }
 }
 
@@ -136,6 +137,25 @@
                                 blue:MAX(b - 0.2, 0.0)
                                alpha:a];
     return nil;
+}
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if([segue.identifier isEqualToString:@"setHistorySegue"]){
+//        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+//        HistoryViewController *controller = (HistoryViewController *)navController.topViewController;
+//        controller.actionHistory = [self.game.actionHistory copy];
+//    }
+//}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"setHistorySegue"]) {
+        if ([segue.destinationViewController isKindOfClass:[HistoryViewController class]]) {
+            
+            [segue.destinationViewController setActionHistory:self.game.actionHistory];
+        }
+    }
 }
 
 
