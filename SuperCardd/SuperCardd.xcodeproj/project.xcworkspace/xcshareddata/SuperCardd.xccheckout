@@ -5,24 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>05F5414A-72CF-4F88-9485-39555C4F4DA1</string>
+	<string>FAA25288-CAFF-4A91-97A1-DE0C81004662</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Training Projects</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>21505EC7784DB6077EED40AFFD0897019DAA0854</key>
-		<string>https://github.com/heyhaydude/matchismo-2013-14.git</string>
 		<key>681C1FABAF438F8D22461730E753535319D787EC</key>
 		<string>https://github.com/heyhaydude/ios-stanford-tutorials.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Training Projects.xcworkspace</string>
+	<string>SuperCardd/SuperCardd.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>21505EC7784DB6077EED40AFFD0897019DAA0854</key>
-		<string>../matchismo-2013-14/</string>
 		<key>681C1FABAF438F8D22461730E753535319D787EC</key>
-		<string>..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/heyhaydude/ios-stanford-tutorials.git</string>
@@ -32,14 +28,6 @@
 	<string>681C1FABAF438F8D22461730E753535319D787EC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>21505EC7784DB6077EED40AFFD0897019DAA0854</string>
-			<key>IDESourceControlWCCName</key>
-			<string>matchismo-2013-14</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
