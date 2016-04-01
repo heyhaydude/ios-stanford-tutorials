@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:../SuperCardd"
+      name = "SuperCardd">
+      <FileRef
+         location = "group:SuperCardd.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:../../matchismo-2013-14 a4"
+      name = "matchismo-2013-14 a4">
+      <FileRef
+         location = "group:Matchismo.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

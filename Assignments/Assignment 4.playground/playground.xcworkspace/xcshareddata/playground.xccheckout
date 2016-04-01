@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>FAA25288-CAFF-4A91-97A1-DE0C81004662</string>
+	<string>4E7B0057-B6C4-4767-BC31-D95E17F2CAED</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SuperCardd</string>
+	<string>playground</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>681C1FABAF438F8D22461730E753535319D787EC</key>
 		<string>https://github.com/heyhaydude/ios-stanford-tutorials.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SuperCardd/SuperCardd.xcodeproj</string>
+	<string>Assignments/Assignment 4.playground/playground.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>681C1FABAF438F8D22461730E753535319D787EC</key>
