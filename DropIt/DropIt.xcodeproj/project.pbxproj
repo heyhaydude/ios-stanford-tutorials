@@ -14,6 +14,7 @@
 		75B6A4841CAF0BEB0027EDDB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B6A4821CAF0BEB0027EDDB /* LaunchScreen.xib */; };
 		75B6A4901CAF0BEB0027EDDB /* DropItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B6A48F1CAF0BEB0027EDDB /* DropItTests.m */; };
 		75B6A49E1CAF0C4B0027EDDB /* DropItViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B6A49D1CAF0C4B0027EDDB /* DropItViewController.m */; };
+		75B6A4A11CAF138B0027EDDB /* DropItBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B6A4A01CAF138B0027EDDB /* DropItBehavior.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		75B6A48F1CAF0BEB0027EDDB /* DropItTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropItTests.m; sourceTree = "<group>"; };
 		75B6A49C1CAF0C4B0027EDDB /* DropItViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropItViewController.h; sourceTree = "<group>"; };
 		75B6A49D1CAF0C4B0027EDDB /* DropItViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropItViewController.m; sourceTree = "<group>"; };
+		75B6A49F1CAF138B0027EDDB /* DropItBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropItBehavior.h; sourceTree = "<group>"; };
+		75B6A4A01CAF138B0027EDDB /* DropItBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropItBehavior.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				75B6A4731CAF0BEB0027EDDB /* Supporting Files */,
 				75B6A49C1CAF0C4B0027EDDB /* DropItViewController.h */,
 				75B6A49D1CAF0C4B0027EDDB /* DropItViewController.m */,
+				75B6A49F1CAF138B0027EDDB /* DropItBehavior.h */,
+				75B6A4A01CAF138B0027EDDB /* DropItBehavior.m */,
 			);
 			path = DropIt;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75B6A4791CAF0BEB0027EDDB /* AppDelegate.m in Sources */,
+				75B6A4A11CAF138B0027EDDB /* DropItBehavior.m in Sources */,
 				75B6A49E1CAF0C4B0027EDDB /* DropItViewController.m in Sources */,
 				75B6A4761CAF0BEB0027EDDB /* main.m in Sources */,
 			);
