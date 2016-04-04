@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>DE7BEBE2-4ED3-47A6-B507-43C212C17ED4</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>DropIt</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>681C1FABAF438F8D22461730E753535319D787EC</key>
 		<string>https://github.com/heyhaydude/ios-stanford-tutorials.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DropIt/DropIt.xcodeproj/project.xcworkspace</string>
+	<string>DropIt/DropIt.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>681C1FABAF438F8D22461730E753535319D787EC</key>
