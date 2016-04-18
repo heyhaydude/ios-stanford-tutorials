@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lg9-oa-a8o">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Imaginarium-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPK-cG-0gK">
+                                <rect key="frame" x="277" y="240" width="46" height="30"/>
+                                <state key="normal" title="Flower">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="r6h-I9-DHV" kind="show" identifier="photo_1" id="Ccx-dx-Epw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkb-WB-Lu3">
+                                <rect key="frame" x="272" y="337" width="55" height="30"/>
+                                <state key="normal" title="Jellyfish">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="r6h-I9-DHV" kind="show" identifier="photo_3" id="owx-ts-DWP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFV-Dw-ufT">
+                                <rect key="frame" x="271" y="285" width="58" height="30"/>
+                                <state key="normal" title="Peppers">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="r6h-I9-DHV" kind="show" identifier="photo_2" id="J1i-QQ-jf7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="jPK-cG-0gK" secondAttribute="centerX" id="3OV-3K-ngd"/>
+                            <constraint firstItem="uFV-Dw-ufT" firstAttribute="top" secondItem="jPK-cG-0gK" secondAttribute="bottom" constant="15" id="46c-EM-dA0"/>
+                            <constraint firstAttribute="centerX" secondItem="kkb-WB-Lu3" secondAttribute="centerX" id="G3Q-kA-Jce"/>
+                            <constraint firstAttribute="centerY" secondItem="uFV-Dw-ufT" secondAttribute="centerY" id="Why-bk-LgJ"/>
+                            <constraint firstAttribute="centerX" secondItem="uFV-Dw-ufT" secondAttribute="centerX" id="agG-qI-Fld"/>
+                            <constraint firstItem="kkb-WB-Lu3" firstAttribute="top" secondItem="uFV-Dw-ufT" secondAttribute="bottom" constant="22" id="c37-Yg-n8X"/>
+                            <constraint firstItem="kkb-WB-Lu3" firstAttribute="top" secondItem="uFV-Dw-ufT" secondAttribute="bottom" constant="22" id="dxV-Lm-RDW"/>
+                            <constraint firstAttribute="centerY" secondItem="uFV-Dw-ufT" secondAttribute="centerY" id="iVX-sb-9VL"/>
+                            <constraint firstItem="kkb-WB-Lu3" firstAttribute="centerX" secondItem="uFV-Dw-ufT" secondAttribute="centerX" id="p7P-K9-ttJ"/>
+                            <constraint firstItem="uFV-Dw-ufT" firstAttribute="top" secondItem="jPK-cG-0gK" secondAttribute="bottom" constant="15" id="sme-nW-aYZ"/>
+                            <constraint firstItem="jPK-cG-0gK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-10" id="wKe-Fe-sPx"/>
+                            <constraint firstItem="kkb-WB-Lu3" firstAttribute="centerX" secondItem="jPK-cG-0gK" secondAttribute="centerX" id="xVJ-fA-SdP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="wKe-Fe-sPx"/>
+                                <exclude reference="Why-bk-LgJ"/>
+                                <exclude reference="sme-nW-aYZ"/>
+                                <exclude reference="dxV-Lm-RDW"/>
+                                <exclude reference="p7P-K9-ttJ"/>
+                                <exclude reference="xVJ-fA-SdP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Imaginarium" id="xYl-1M-3Bm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1219.5" y="389"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="0hT-M9-RZP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="frk-3z-ySQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="r6h-I9-DHV" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7fO-9x-BfN"/>
+                        <viewControllerLayoutGuide type="bottom" id="rHn-S4-GG9"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8Gn-oW-vVn">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </scrollView>
+                    <connections>
+                        <outlet property="scrollView" destination="8Gn-oW-vVn" id="LIo-0n-aMG"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2280" y="389"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QYh-Kg-NvE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lg9-oa-a8o" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lQa-rg-jJH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="aHN-Qy-IXH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wW-Hg-ath" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349.5" y="389"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="owx-ts-DWP"/>
+    </inferredMetricsTieBreakers>
+</document>

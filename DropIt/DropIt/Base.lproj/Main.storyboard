@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="366" height="600"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Jc7-uz-hIB" appends="YES" id="khv-GU-614"/>
@@ -31,6 +31,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="gameView" destination="B6x-j1-vCD" id="v1S-LX-a5G"/>
                     </connections>
@@ -47,7 +49,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="436.5" y="389"/>
+            <point key="canvasLocation" x="435.75" y="388.5"/>
         </scene>
     </scenes>
 </document>

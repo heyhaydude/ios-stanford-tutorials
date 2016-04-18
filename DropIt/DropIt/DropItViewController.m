@@ -12,7 +12,7 @@
 
 @interface DropItViewController () <UIDynamicAnimatorDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *gameView;
+@property (weak, nonatomic) IBOutlet BezierPathView *gameView;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 @property (strong, nonatomic) DropItBehavior *dropItBehavior;
 @property (strong, nonatomic) UIAttachmentBehavior *attachment;
@@ -32,6 +32,7 @@
         self.attachment.anchorPoint = gesturePoint;
     }else if (sender.state == UIGestureRecognizerStateEnded){
         [self.animator removeBehavior:self.attachment];
+        self.gameView.path = nil;
     }
 }
 
@@ -39,6 +40,14 @@
     
     if (self.droppingView) {
         self.attachment =[[UIAttachmentBehavior alloc] initWithItem:self.droppingView attachedToAnchor:anchorPoint];
+        UIView *droppingView = self.droppingView;
+        __weak  DropItViewController *weakSelf = self;
+        self.attachment.action = ^{
+            UIBezierPath *path = [[UIBezierPath alloc] init];
+            [path moveToPoint:weakSelf.attachment.anchorPoint];
+            [path addLineToPoint:droppingView.center];
+            weakSelf.gameView.path = path;
+        };
         self.droppingView = nil;
         [self.animator addBehavior:self.attachment];
     }
